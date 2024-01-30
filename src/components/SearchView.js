@@ -1,25 +1,5 @@
 import Hero from "./Hero";
-
-const MovieCard = ({ movie }) => {
-  const moviePosterURl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-  return (
-    <div className="col-sm-4 col-lg-3 my-5">
-      <div class="card">
-        <img
-          src={moviePosterURl}
-          class="card-img-top"
-          alt={movie.original_title}
-        />
-        <div class="card-body">
-          <h5 class="card-title">{movie.original_title}</h5>
-          <a href="goSomeWhere" class="btn btn-primary">
-            details
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-};
+import MovieCard from "./MovieCard";
 
 const SearchView = ({ keyword, searchResults }) => {
   const title = `you are searching for ${keyword}`;

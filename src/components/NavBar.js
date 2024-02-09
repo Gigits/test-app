@@ -2,8 +2,14 @@ import { useHistory, Link } from "react-router-dom";
 const NavBar = ({ searchText, setSearchText }) => {
   const history = useHistory();
   function updateSearchText(e) {
+    e.preventDefault();
     history.push("/search");
     setSearchText(e.target.value);
+  }
+  function handleClick(e) {
+    e.preventDefault();
+    history.push("/search");
+    setSearchText(searchText);
   }
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -40,7 +46,7 @@ const NavBar = ({ searchText, setSearchText }) => {
               </Link>
             </li>
           </ul>
-          <form className="d-flex" role="search">
+          <form className="d-flex" role="search" onSubmit={handleClick}>
             <input
               className="form-control me-2"
               type="search"
@@ -49,7 +55,7 @@ const NavBar = ({ searchText, setSearchText }) => {
               value={searchText}
               onChange={updateSearchText}
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn btn-outline-primary" type="submit">
               Search
             </button>
           </form>

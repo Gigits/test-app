@@ -3,7 +3,9 @@ import Hero from "./Hero";
 const About = () => {
   return (
     <div>
-      <Hero text="about us" />
+      <Hero>
+        <h1>about us</h1>
+      </Hero>
       <div className="container">
         <div className="row">
           <div className="col-lg-8 offset-lg-2 my-5 ">

@@ -1,16 +1,22 @@
-const Hero = ({ text, backdropImg }) => {
+const Hero = ({ backdropImg, children }) => {
   return (
     <div
-      style={backdropImg && { height: "400px" }}
-      className="bg-dark text-white p-5 position-relative"
+      style={backdropImg && { height: "450px" }}
+      className={
+        !backdropImg
+          ? "bg-dark text-white p-5 position-relative"
+          : "text-white  position-relative"
+      }
     >
-      <h1> {text}</h1>
-      <div
-        className="backdrop-Div"
-        style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/w500${backdropImg})`,
-        }}
-      ></div>
+      <div>{children}</div>
+      {backdropImg && (
+        <div
+          className="backdrop-Div"
+          style={{
+            backgroundImage: `url(${backdropImg})`,
+          }}
+        ></div>
+      )}
     </div>
   );
 };

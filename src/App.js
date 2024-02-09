@@ -2,8 +2,9 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import About from "./components/About";
+import Footer from "./components/Footer";
 import SearchView from "./components/SearchView";
-import MovieDetailsView from "./components/MovieDetails";
+import MovieDetails from "./components/MovieDetails";
 import { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 
@@ -31,9 +32,10 @@ function App() {
           <SearchView keyword={searchText} searchResults={searchResults} />
         </Route>
         <Route path="/movieDetails/:id">
-          <MovieDetailsView />
+          <MovieDetails />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }

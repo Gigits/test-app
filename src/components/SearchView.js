@@ -8,14 +8,29 @@ const SearchView = ({ keyword, searchResults }) => {
   });
 
   return (
-    <div>
-      <Hero text={title} />
-      {searchHtml && (
-        <div className="container">
-          <div className="row">{searchHtml}</div>
+    <>
+      <Hero>
+        <h1>{title}</h1>
+      </Hero>
+      {searchResults.length > 1 ? (
+        <div>
+          {searchHtml && (
+            <div className="container">
+              <div className="row">{searchHtml}</div>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div
+          style={{ height: "100vh" }}
+          className="d-flex justify-content-center"
+        >
+          <h1 style={{ marginTop: "60px", textTransform: "uppercase" }}>
+            🔭 search result not found... 😪
+          </h1>
         </div>
       )}
-    </div>
+    </>
   );
 };
 export default SearchView;
